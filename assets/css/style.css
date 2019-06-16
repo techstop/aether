@@ -37,6 +37,11 @@ strong {
     z-index: 105;
     font-size: 0.8em;
 }
+.logo-size {
+    margin: 0;
+	max-height: 4rem;
+	max-width: 4rem;
+}
 .hamburger-menu {
     display: block;
     position: relative;

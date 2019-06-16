@@ -1,10 +1,14 @@
 <nav class="nav-bar side-padding">
   <h1 class="nav-header"><a href="{{ .Site.BaseURL }}" class="nav-text">
-    {{- if isset $.Site.Params "brand"}}
-      {{- $.Site.Params.brand -}}
+    {{ with .Site.Params.siteLogoImage }}
+      <img class="logo-size" src="{{ . | absURL }}" alt="logo">
     {{ else }}
-      {{- $.Site.Title -}}
-    {{ end -}}
+      {{- if isset $.Site.Params "brand"}}
+        {{- $.Site.Params.brand -}}
+      {{ else }}
+        {{- $.Site.Title -}}
+      {{ end -}}
+    {{ end }}
   </a></h1>
   <div class="hamburger-menu">
     <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
